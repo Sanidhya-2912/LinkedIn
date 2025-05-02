@@ -2,7 +2,9 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { authDataContext } from './AuthContext'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import {io} from "socket.io-client"
 export const userDataContext=createContext()
+export let socket=io("https://linkedin-backend-gbdo.onrender.com")
 
 function UserContext({children}) {
 let [userData,setUserData]=useState(null)
